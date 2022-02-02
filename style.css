@@ -1,0 +1,15 @@
+body {
+  background-color: #161616;
+  display: flex;
+  height: 84vh;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #fa0;
+  padding: 0 20px;
+  border-left: 2px solid #333;
+}
