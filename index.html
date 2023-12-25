@@ -9,9 +9,9 @@
   <head>
     <meta charset="utf-8" />
     <title>Armen Grigoryan</title>
-    <meta content="I&#x27;d love to hear from you." name="description" />
-    <meta content="get in touch - contact digital designer bram naus" property="og:title" />
-    <meta content="I&#x27;d love to hear from you." property="og:description" />
+    <meta content="Armen Grigoryan | Contacts" name="description" />
+    <meta content="Armen Grigoryan" property="og:title" />
+    <meta content="Armen Grigoryan | Contacts" property="og:description" />
 
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
@@ -51,6 +51,10 @@
         height: auto;
       }
 
+      .heading-link-large {
+        line-height: 1.2 !important;
+      }
+
       .lenis.lenis-smooth {
         scroll-behavior: auto;
       }
@@ -69,11 +73,11 @@
     </style>
     <style>
       .main-wrapper {
-        opacity: 0;
+        opacity: 1;
       }
       @media screen and (min-width: 992px) {
         .nav-link {
-          opacity: 0;
+          opacity: 1;
         }
       }
     </style>
@@ -186,9 +190,6 @@
             .stagger-link__text {
               text-shadow: 0em 1.2em 0px #fff;
             }
-            .stagger-link__text.is--large {
-              text-shadow: 0em 1em 0px #fff;
-            }
 
             .inner-vid video {
               object-fit: cover;
@@ -199,19 +200,30 @@
             }
 
             .process-step-1 .process-step-title-overlay {
-              background-image: linear-gradient(90deg, var(--gradient-color-1), var(--gradient-color-2));
+              background-image: linear-gradient(90deg, #0077e7, #01d8d1);
             }
-
-            h2 span {
-              font-weight: 600;
+            h2 div {
+              font-weight: 600 !important;
               background-clip: text;
               -webkit-background-clip: text;
               -webkit-text-fill-color: transparent;
               background-image: linear-gradient(90deg, #0077e7, #01d8d1);
               filter: hue-rotate(0deg);
-              animation: hueShift 6s infinite linear 1s;
+              animation: hueShift 6s infinite linear 500ms;
             }
-
+            .hr {
+              position: relative;
+              margin-bottom: -0.9rem !important;
+            }
+            .hr span {
+              position: absolute;
+              height: 4px;
+              width: 100vw;
+              top: 2px;
+              background: linear-gradient(-90deg, #00e7d4, #0177d8) !important;
+              filter: hue-rotate(0deg);
+              animation: hueShift 6s infinite linear 500ms;
+            }
             @keyframes hueShift {
               0% {
                 filter: hue-rotate(0deg);
@@ -224,26 +236,28 @@
           </style>
         </div>
       </div>
-      <!-- .process-step-1 .process-step-title-overlay {
-	background-image: linear-gradient(90deg, var(--gradient-color-1), var(--gradient-color-2)); -->
+      <br />
       <main class="main-wrapper">
         <section class="section inner--hero">
           <div class="section-padding no--top">
             <div class="page-padding">
-              <div class="margin-btm margin-med">
-                <h2 class="text-reg">Contacts</h2>
-              </div>
-              <br />
-              <div class="margin-btm margin-large">
+              <div class="margin-btm">
                 <div class="max-45em">
-                  <h2>
-                    <span> ARMEN </span>
-                    <br />
+                  <h2 style="font-weight: 600">
+                    <div>ARMEN</div>
                     GRIGORYAN
                   </h2>
                 </div>
               </div>
-              <div class="flex-ver align-left" style="white-space: nowrap">
+              <br />
+              <div class="hr"><span></span></div>
+              <br />
+              <div class="hr"><span></span></div>
+              <br />
+              <br />
+              <br />
+              <!-- gap-tiny -->
+              <div class="flex-hor gap-reg align-left" style="white-space: nowrap; flex-wrap: wrap">
                 <a stagger-link="" href="mailto:armen4430@gmail.com" class="text-link is--large w-inline-block"
                   ><div text-split="" class="stagger-link__text">armen4430@gmail.com</div>
                 </a>
@@ -293,23 +307,10 @@
             </div>
           </div>
         </section>
-        <footer class="section is--footer">
+        <footer class="section is--footer page-padding">
           <div class="section-padding no--btm">
-            <div class="page-padding">
+            <div class="">
               <div class="main-columns" style="white-space: nowrap">
-                <a
-                  stagger-link=""
-                  id="w-node-_15e59f39-f8c2-c0eb-8471-502902a5e5d4-1b9ce965"
-                  href="mailto:armen4430@gmail.com"
-                  class="text-link w-inline-block"
-                  ><div text-split="" class="stagger-link__text">armen4430@gmail.com</div></a
-                ><a
-                  stagger-link=""
-                  id="w-node-f03064ca-9dde-db99-3ba3-ac49b6369733-1b9ce965"
-                  href="tel:+37499222808"
-                  class="text-link w-inline-block"
-                  ><div text-split="" class="stagger-link__text">+374 99 222808</div></a
-                >
                 <div
                   id="w-node-ef281431-66a5-07f3-c5ac-85851b9ce96d-1b9ce965"
                   class="flex-hor gap-tiny"
@@ -328,6 +329,8 @@
             </div>
           </div>
         </footer>
+        <br />
+        <br />
       </main>
     </div>
     <script
@@ -345,8 +348,6 @@
     <script src="https://unpkg.com/split-type"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.22/bundled/lenis.min.js"></script>
     <script>
-      gsap.registerPlugin(ScrollTrigger);
-
       // ————— 100vh minus Safari nav
       const appHeight = () => {
         const doc = document.documentElement;
@@ -531,37 +532,6 @@
 
               outwardLinks.unshift(navLink);
 
-              gsap.fromTo(
-                ".main-wrapper",
-                {
-                  opacity: 1,
-                  scale: 1,
-                },
-                {
-                  opacity: 0,
-                  y: 100,
-                  duration: 0.8,
-                  ease: "power3.inOut",
-                }
-              );
-              if (window.innerWidth < 992) {
-                $(".nav-btn__w").click();
-              } else {
-                gsap.fromTo(
-                  outwardLinks,
-                  {
-                    yPercent: 0,
-                    opacity: 1,
-                  },
-                  {
-                    duration: 0.6,
-                    yPercent: 50,
-                    opacity: 0,
-                    stagger: { amount: 0.5 },
-                    ease: "power3.inOut",
-                  }
-                );
-              }
               setTimeout(function () {
                 window.location = transitionURL;
               }, exitDurationMS);
@@ -581,47 +551,47 @@
       // ————— MOBILE MENU
       let menuAnimation;
       function setupAnimation() {
-        menuAnimation = gsap.timeline({
-          paused: true,
-          reversed: true,
-          defaults: {
-            ease: "power3.inOut",
-          },
-        });
-        menuAnimation
-          .set(".nav-list", { display: "grid" })
-          .fromTo(
-            $(".nav-link"),
-            { scaleY: 0 },
-            {
-              scaleY: 1,
-              stagger: { amount: 0.6, from: "end" },
-              duration: 0.6,
-            }
-          )
-          .fromTo(
-            ".grid-item__mobile-bg",
-            {
-              scaleY: 0,
-            },
-            { scaleY: 1, duration: 0.6 },
-            "<"
-          )
-          .fromTo(
-            $(".nav-link").find(".char"),
-            {
-              yPercent: 100,
-            },
-            {
-              yPercent: 0,
-              delay: 0.2,
-              stagger: { amount: 0.5, from: "end" },
-            },
-            "<"
-          );
+        // menuAnimation = gsap.timeline({
+        //   paused: true,
+        //   reversed: true,
+        //   defaults: {
+        //     ease: "power3.inOut",
+        //   },
+        // });
+        // menuAnimation
+        //   .set(".nav-list", { display: "grid" })
+        //   .fromTo(
+        //     $(".nav-link"),
+        //     { scaleY: 0 },
+        //     {
+        //       scaleY: 1,
+        //       stagger: { amount: 0.6, from: "end" },
+        //       duration: 0.6,
+        //     }
+        //   )
+        //   .fromTo(
+        //     ".grid-item__mobile-bg",
+        //     {
+        //       scaleY: 0,
+        //     },
+        //     { scaleY: 1, duration: 0.6 },
+        //     "<"
+        //   )
+        //   .fromTo(
+        //     $(".nav-link").find(".char"),
+        //     {
+        //       yPercent: 100,
+        //     },
+        //     {
+        //       yPercent: 0,
+        //       delay: 0.2,
+        //       stagger: { amount: 0.5, from: "end" },
+        //     },
+        //     "<"
+        //   );
       }
       function menuToggle() {
-        menuAnimation.reversed() ? menuAnimation.timeScale(1).play() : menuAnimation.timeScale(1.5).reverse();
+        // menuAnimation.reversed() ? menuAnimation.timeScale(1).play() : menuAnimation.timeScale(1.5).reverse();
       }
       function checkWindowSize() {
         if (window.innerWidth <= 992) {
@@ -631,49 +601,49 @@
             navButton.addEventListener("click", menuToggle);
             navButton.addEventListener("touch", menuToggle);
           } else {
-            if (menuAnimation) {
-              menuAnimation.kill();
-              menuAnimation = null;
-            }
+            // if (menuAnimation) {
+            // menuAnimation.kill();
+            // menuAnimation = null;
+            // }
           }
         }
       }
       checkWindowSize();
 
-      gsap.set(".nav-btn__w", { pointerEvents: "none" });
+      // gsap.set(".nav-btn__w", { pointerEvents: "none" });
 
       if (window.innerWidth >= 992) {
-        gsap.fromTo(
-          ".nav-link",
-          {
-            opacity: 0,
-            yPercent: 50,
-          },
-          {
-            opacity: 1,
-            yPercent: 0,
-            duration: 0.45,
-            ease: "power3.Out",
-            stagger: { amount: 0.45, from: "start" },
-          }
-        );
+        // gsap.fromTo(
+        //   ".nav-link",
+        //   {
+        //     opacity: 0,
+        //     yPercent: 500,
+        //   },
+        //   {
+        //     opacity: 1,
+        //     yPercent: 0,
+        //     duration: 0.45,
+        //     ease: "power3.Out",
+        //     stagger: { amount: 0.45, from: "start" },
+        //   }
+        // );
       }
-      gsap.fromTo(
-        ".main-wrapper",
-        {
-          opacity: 0,
-          y: 100,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          ease: "power3.InOut",
-          onComplete: function () {
-            gsap.set(".nav-btn__w", { pointerEvents: "auto" });
-          },
-        }
-      );
+      // gsap.fromTo(
+      //   ".main-wrapper",
+      //   {
+      //     opacity: 0,
+      //     y: -500,
+      //   },
+      //   {
+      //     opacity: 1,
+      //     y: 0,
+      //     duration: 0.6,
+      //     ease: "power3.InOut",
+      //     onComplete: function () {
+      //       gsap.set(".nav-btn__w", { pointerEvents: "auto" });
+      //     },
+      //   }
+      // );
     </script>
   </body>
 </html>
